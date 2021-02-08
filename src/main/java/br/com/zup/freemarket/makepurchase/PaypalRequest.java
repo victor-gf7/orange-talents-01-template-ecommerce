@@ -31,4 +31,8 @@ public class PaypalRequest {
                 ", statusTransactionPaypal=" + statusTransactionPaypal +
                 '}';
     }
+
+    public Transaction converterToTransaction(Purchase purchase) {
+        return new Transaction(statusTransactionPaypal.normalize(), transactionId, purchase);
+    }
 }
